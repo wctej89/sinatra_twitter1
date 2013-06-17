@@ -9,6 +9,6 @@ class TwitterUser < ActiveRecord::Base
   end
 
   def tweets_stale?
-    Time.now - self.tweets.last.created_at >= 900 ? true : false
+    Time.now - self.tweets.last.updated_at >= 900 ? true : false
   end
 end
